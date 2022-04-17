@@ -74,6 +74,15 @@ function submitOrder(count) {
         }else if (text("确认支付").exists()) {
             text("确认支付").findOne().parent().click();
         }
+    } else if (text("立即支付").exists()) {
+        text("立即支付").findOne().parent().click();
+        铃声通知();
+        震动();
+        if (text("我知").exists()) {
+            text("我知道了").findOne().click();
+        }else if (text("确认支付").exists()) {
+            text("确认支付").findOne().parent().click();
+        }
     } else {
         exit;
     }
