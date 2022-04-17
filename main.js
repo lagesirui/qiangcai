@@ -70,8 +70,9 @@ function submitOrder(count) {
         铃声通知();
         震动();
         if (text("我知").exists()) {
-            toast("关闭我知道了");
             text("我知道了").findOne().click();
+        }else if (text("确认支付").exists()) {
+            text("确认支付").findOne().parent().click();
         }
     } else {
         exit;
