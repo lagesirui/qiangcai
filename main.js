@@ -61,18 +61,25 @@ function submitOrder(count) {
         textStartsWith("结算(").findOne().parent().click();
     } else if (text("我知道了").exists()) {
         toast("关闭我知道了");
+        text("我知道了").findOne().click();
+    } else if (text("我知道了").exists()) {
+        toast("关闭我知道了");
         text("我知道了").findOne().parent().click();
     } else if (text("重新加载").exists()) {
         toast("重新加载");
         text("重新加载").findOne().parent().click();
+    } else if (text("返回购物车").exists()) {
+            text("返回购物车").findOne().parent().click();
     } else if (text("极速支付").exists()) {
         text("极速支付").findOne().parent().click();
         铃声通知();
         震动();
         if (text("我知").exists()) {
             text("我知道了").findOne().click();
-        }else if (text("确认支付").exists()) {
+        } else if (text("确认支付").exists()) {
             text("确认支付").findOne().parent().click();
+        } else if (text("返回购物车").exists()) {
+            text("返回购物车").findOne().parent().click();
         }
     } else if (text("立即支付").exists()) {
         text("立即支付").findOne().parent().click();
