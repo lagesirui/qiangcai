@@ -59,12 +59,16 @@ function checkAll() {
 function submitOrder(count) {
     if (textStartsWith("结算(").exists()) {
         textStartsWith("结算(").findOne().parent().click();
-    } else if (text("我知道了").exists()) {
-        toast("关闭我知道了");
-        text("我知道了").findOne().click();
+        if (text("我知道了").exists()) {
+            toast("关闭我知道了");
+            text("我知道了").findOne().click();
+        }
     } else if (text("我知道了").exists()) {
         toast("关闭我知道了");
         text("我知道了").findOne().parent().click();
+    } else if (text("我知道了").exists()) {
+        toast("关闭我知道了");
+        text("我知道了").findOne().parent().parent().click();
     } else if (text("重新加载").exists()) {
         toast("重新加载");
         text("重新加载").findOne().parent().click();
